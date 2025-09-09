@@ -1,75 +1,50 @@
-# Nuxt Minimal Starter
+# Тестовое задание: Авторизация на Vue/Nuxt
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Описание проекта
 
-## Setup
+Это тестовое приложение реализовано на **Nuxt 3** с использованием **Composition API**.  
+Цель: создать адаптивный сайт с авторизацией пользователей и личным кабинетом.
 
-Make sure to install dependencies:
+Функционал:  
+- Главная страница с кнопкой входа (открывается модальное окно авторизации)  
+- Личный кабинет доступен только авторизованным пользователям  
+- Страница «Контакты» доступна всем пользователям  
+- Авторизация хранит данные пользователя в `localStorage`  
+- Проверка валидности пароля (минимум 8 символов)  
+- Выход из аккаунта выполняет `logout` и редирект на главную  
 
-```bash
-# npm
-npm install
+---
 
-# pnpm
-pnpm install
+## Структура проекта
+ Тестовое_Aveds/
+├─ app/
+├─ assets/
+├─ components/
+│ ├─ base/
+│   ├─ Btn.vue # Кнопки
+│   └─ modal.vue # Модальное окно
+│ ├─ layout/
+│   └─ header.vue # шапка сайта
+│ ├─ section/
+│   └─ hero.vue # секция главной сттраницы
+├─ composables/
+│ └─ useAuth.js # composable для авторизации
+├─ layouts/
+│ └─ default.vue 
+├─ middleware/
+| └─ auth.js # Проверка авторизации для личного кабинета
+├─ pages/
+│ ├─ index.vue # Главная страница
+│ ├─ account.vue # Личный кабинет
+│ └─ contacts.vue # Страница контактов
+├─ plugins/
+├─ public/
+│ └─ api/
+│   └─ users.json # JSON с пользователями
+├─ tsconfig.json
+├─ tailwind.config.js
+├─ nuxt.config.ts
+├─ package.json
+├─ package-lock.json
+└─ README.md
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
